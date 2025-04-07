@@ -1,5 +1,6 @@
 import os
 import json
+import time
 
 # get current working directory path
 cwd_path = os.getcwd()
@@ -110,11 +111,14 @@ def main():
     pozice = pattern_search(seq, "ATA")
     print(pozice)
 
+    start_time = time.time()
     seq = read_data(file_name, field="ordered_numbers")
     print(seq)
     ind = binary_search(seq, 63)
     print(ind)
 
+    total_time = time.time() - start_time
+    print(total_time)
 
 if __name__ == '__main__':
     main()
